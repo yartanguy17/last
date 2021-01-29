@@ -10,11 +10,11 @@ import { ProductService } from 'src/app/components/shared/services/product.servi
 export class PopularProductsComponent implements OnInit {
 
   public products: Product[];
-  public product            :   Product = {};
- 
+  public product : Product = {};
+
    constructor(private productService: ProductService) { }
- 
+
    ngOnInit() {
-     this.productService.getProducts().subscribe(product => this.products = product);
+    this.products=this.productService.getProducts()
    }
 }

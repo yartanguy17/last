@@ -4,13 +4,13 @@
         <h4 class="title">POPULAR PRODUCTS</h4>
     </div>
       <mat-list class="reviews">
-         <mat-list-item class="content"  *ngFor="let product of products | slice:0:3">
-          <div class="media">  <a [routerLink]="['/home/left-sidebar/product', product.id]">
-              <img class="img-fluid" [src]="product.pictures[0].big" alt="">
+         <mat-list-item class="content"  *ngFor="let product of products | slice:0:20">
+          <div class="media">  <a [routerLink]="['/home/left-sidebar/product', product.uid]">
+              <img class="img-fluid" [src]="'http://51.89.97.33:5500'+product.images[0]" alt="">
             </a>
           </div>
              <div class="info align-self-center">
-               <a [routerLink]="['/home/left-sidebar/product', product.id]"><h5>{{product.name}}</h5></a>
+               <a [routerLink]="['/home/left-sidebar/product', product.uid]"><h5>{{product.nom}}</h5></a>
                <div class="stars">
                   <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
                   <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
@@ -18,7 +18,7 @@
                   <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
                   <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
                </div>
-               <p class="price" *ngIf="!productsService?.catalogMode">{{product.price | currency:productsService?.currency:'symbol'}}</p>
+               <p class="price" *ngIf="!productsService?.catalogMode">{{product.prix}}</p>
              </div>
           </mat-list-item>
       </mat-list>

@@ -14,10 +14,7 @@ export class ProductVerticalComponent implements OnInit {
   constructor(private productService: ProductService ) { }
 
   ngOnInit() {
-    this.productService.getProducts()
-    .subscribe (
-    product => this.products = product
-    )
+    this.products=this.productService.getProducts()
   }
 
 }

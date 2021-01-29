@@ -8,7 +8,7 @@
         <div fxFlex="100" fxFlex.gt-sm="50">
             <div class="swiper-container h-100">
                 <div class="swiper-wrapper">
-                  <img [src]="product.pictures[0].big" alt="" class="img-fluid">
+                  <img [src]="'http://51.89.97.33:5500/'+product.images[0]" alt="" class="img-fluid">
                 </div>
 
             </div>
@@ -16,11 +16,11 @@
         <div fxFlex="100" fxFlex.gt-sm="50" ngClass.gt-sm="px-2 m-0" ngClass.sm="mt-2" ngClass.xs="mt-2">
           <div class="product-right">
               <div class="product-details">
-                  <h2 class="mb-10">{{product.name}}</h2>
-                <h4 class="mb-10" ><del>{{product.salePrice | currency:productsService?.currency:'symbol'}}</del><span>{{product.discount}}% off</span></h4>
-                <h3 class="price mb-10">{{product.price | currency:productsService?.currency:'symbol' }}</h3>
+                  <h2 class="mb-10">{{product.nom}}</h2>
+                <h4 class="mb-10" ><del>{{product.prix }}</del><span>{{product.discount}}% off</span></h4>
+                <h3 class="price mb-10">{{product.prix }}</h3>
                 <div class="discription">
-                  <p class="bold">Product details</p>
+                  <p class="bold">Produit details</p>
                   <p class="text-muted productDescription">{{product.description}}</p>
                 </div>
             </div>

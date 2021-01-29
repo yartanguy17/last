@@ -52,10 +52,10 @@
 * 1. General styles
 ****************************************/
 .mat-warn .mat-slider-thumb, .mat-warn .mat-slider-thumb-label, .mat-warn .mat-slider-track-fill {
-  background-color: #ff7e00 !important;
+  background-color: #32cd32 !important;
 }
 .mat-primary .mat-slider-thumb, .mat-primary .mat-slider-thumb-label, .mat-primary .mat-slider-track-fill {
-  background-color: #ff7e00 !important;
+  background-color: #32cd32 !important;
 }
 
 html, body { height: 100%; }
@@ -547,8 +547,8 @@ width: 100% !important;
       padding: 4px 40px;
       &:hover {
         background: #ffffff;
-        color: #ff7e00 !important;
-        border: 2px solid #ff7e00;
+        color: #32cd32 !important;
+        border: 2px solid #32cd32;
     }
     }
   }

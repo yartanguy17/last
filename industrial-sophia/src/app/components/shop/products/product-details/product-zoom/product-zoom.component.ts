@@ -16,9 +16,9 @@ export class ProductZoomComponent {
   constructor(
     private productsService: ProductService,
     public dialogRef: MatDialogRef<ProductZoomComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { product, index }) {
+    @Inject(MAT_DIALOG_DATA) public data: { product}) {
     this.product = data.product;
-    this.selectedProductImageIndex = data.index;
+    this.selectedProductImageIndex = data.product.uid;
   }
 
   public close(): void {

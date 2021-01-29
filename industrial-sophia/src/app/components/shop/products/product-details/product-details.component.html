@@ -17,21 +17,16 @@
                        <button mat-icon-button  fxHide="false" fxHide.gt-md>
                           <mat-icon>fullscreen</mat-icon>
                        </button>
-                       <img [src]="product.images"/>
+                       <img [src]="product.images[0]" alt="">
                     </div>
-                    <a (click)="openProductDialog(product, bigProductImageIndex)"><mat-icon>zoom_in</mat-icon></a>
+                    <a (click)="openProductDialog(product)"><mat-icon>zoom_in</mat-icon></a>
                  </mat-card>
 
 
                 <div class="small-carousel">
                     <div class="swiper-container" [swiper]="config">
                         <div class="swiper-wrapper">
-                            <div *ngFor="let image of product?.images; let i=index" class="swiper-slide">
-                                <mat-card (click)="selectImage(i)" class="p-1">
-                                    <img [src]="image.small" class="swiper-lazy"/>
-                                    <div class="swiper-lazy-preloader"></div>
-                                </mat-card>
-                            </div>
+                          <img [src]="product.images[0]" alt="">
                         </div>
                         <button mat-icon-button class="swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
                         <button mat-icon-button class="swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button>
@@ -43,8 +38,8 @@
                   <div class="product-right">
                      <div class="product-details">
                         <h2>{{product.nom}}</h2>
-                        <h4 *ngIf="!productsService?.catalogMode"><del>{{product.salePrice | currency:productsService?.currency:'symbol'}}</del><span>{{product.discount}}% off</span></h4>
-                        <h3 class="price" *ngIf="!productsService?.catalogMode">{{product.prix | currency:productsService?.currency:'symbol'}}</h3>
+                        <h4 *ngIf="!productsService?.catalogMode"><del>{{product.salePrice }}</del><span>{{product.discount}}% off</span></h4>
+                        <h3 class="price" *ngIf="!productsService?.catalogMode">{{product.prix }}</h3>
                         <p class="text-muted description">{{product.description}}</p>
                      </div>
                      <div class="py-1 mt-15 mb-15">
@@ -65,12 +60,12 @@
                                  <mat-icon>add</mat-icon>
                               </button>
                            </div>
-                           <div class="buttons ">
-                              <button mat-raised-button color="primary" class="btn-project mr-10" (click)="addToCart(product, counter)">ADD TO CARD</button>
+                           <div class="buttons " style="width: 99px;">
+                              <button mat-raised-button color="primary" class="btn-project mr-10" (click)="addToCart(product, counter)">AJOUTER AU PANIER</button>
                            </div>
                         </div>
                      </div>
-                     <div class="social-icons">
+                    <!---- <div class="social-icons">
                         <span class="text-muted fw-500 ">Share it: </span>
                         <ul fxLayout="row" class="social list-inline mt-15">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -78,7 +73,7 @@
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                           </ul>
-                     </div>
+                     </div>-->
 
                   </div>
                </div>
@@ -199,7 +194,7 @@
 
        </div>
        <div fxLayout="row wrap" fxHide fxShow.gt-sm fxFlex="100" fxFlex.gt-sm="22">
-        <div fxFlex="100"  >
+       <!---- <div fxFlex="100"  >
           <div fxLayout="row wrap" class="info-bar" ngClass.gt-md="m-0">
              <div fxFlex="100" >
                 <mat-card class="light-block" fxLayout="row"  fxLayoutAlign="start center">
@@ -252,15 +247,16 @@
            </div>
            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nects.</p>
        </div>
-       </div>
+       </div>-->
        </div>
 
     </div>
     <div class="products no-bg sec-padding">
         <div class="title">
-            <h4 class="widget-title">Featured Products</h4>
+            <h4 class="widget-title">
+              Produits de la même catégorie</h4>
           </div>
-          <app-product-carousel [product]="products | slice:0:6"></app-product-carousel>
+          <app-product-carousel [product]="products | slice:0:30"></app-product-carousel>
      </div>
   </div>
 </div>

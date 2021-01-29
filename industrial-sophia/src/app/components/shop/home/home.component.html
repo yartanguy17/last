@@ -4,19 +4,19 @@
         <div class="container">
             <mat-tab-group>
 
-                <mat-tab  label="FEATURED PRODUCTS">
+                <mat-tab  label="PRODUITS POPULAIRES">
 
                          <app-product-carousel [product]="products | slice:0:9"></app-product-carousel>
 
                 </mat-tab>
 
-                <mat-tab label="LATEST PRODUCTS">
+                <mat-tab label="DERNIERS PRODUITS">
 
                         <app-product-carousel [product]="products | slice:10:19"></app-product-carousel>
 
                 </mat-tab>
 
-                <mat-tab label="ON SALE PRODUCTS">
+                <mat-tab label="PRODUITS EN VENTE">
 
                           <app-product-carousel [product]="products | slice:20:29"></app-product-carousel>
 

@@ -47,7 +47,7 @@ export class ProductComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(product => {
       if(product){
-        this.router.navigate(['/products', product.id, product.name]);
+        this.router.navigate(['/products', product.uid, product.nom]);
       }
     });
   }

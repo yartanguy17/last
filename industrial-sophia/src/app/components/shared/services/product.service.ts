@@ -5,6 +5,7 @@ import { Product } from 'src/app/modals/product.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { map } from 'rxjs/operators';
 import { ElementSchemaRegistry } from '@angular/compiler';
+import { Category } from 'src/app/modals/category.model';
 
 
 
@@ -22,6 +23,7 @@ export class ProductService {
   public url = "assets/data/banners.json";
 
   private tabP:Product[]=[];
+  private tabC:Category[]=[];
 
   public compareProducts : BehaviorSubject<Product[]> = new BehaviorSubject([]);
   public observer   :  Subscriber<{}>;
@@ -30,10 +32,12 @@ export class ProductService {
    this.compareProducts.subscribe(products => products = products)
 
    this.products()
+   this.categorie()
    console.log("test produit:",this.products())
 
    console.log("test tab:",this.tabP)
-  
+   console.log("test tabC:",this.tabC)
+
    this.getProduct("d612755e-0573-401c-a2f2-8a82a9a42191")
 
   // this.getProducts()
@@ -50,6 +54,19 @@ export class ProductService {
 
      console.log("test tab in func:",this.tabP)
      return this.tabP
+  }
+
+  public categorie(){
+
+    this.httpClient.get<Category[]>("http://51.89.97.33:5500/api/categories").subscribe(donne=>{
+      donne.forEach(res=>{
+        console.log("test c:",res)
+        this.tabC.push(res)
+     })
+   })
+
+   console.log("test tabc in func:",this.tabC)
+   return this.tabC
   }
 
   public banners(): Observable<any[]>{
@@ -71,9 +88,7 @@ export class ProductService {
       // Get Products By Id
   public getProduct(id: string) {
 
-   
-
-    const f = this.getProducts().find(item=>item.uid === id)
+   const f = this.getProducts().find(item=>item.uid === id)
 
     console.log("fin:",f)
     return f

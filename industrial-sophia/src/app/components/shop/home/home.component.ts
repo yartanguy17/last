@@ -11,9 +11,10 @@ export class HomeComponent implements OnInit {
   products: Product[];
   public banners = [];
   public slides = [
-    { title: 'THE BEST CHOICE IS HERE', subtitle: 'New Arrivals On Sale', image: 'assets/images/carousel/banner1.jpg' },
-    { title: 'Biggest discount', subtitle: 'Check the promotion', image: 'assets/images/carousel/banner1.jpg' },
-    { title: 'Biggest sale', subtitle: 'Dont miss it', image: 'assets/images/carousel/banner1.jpg' },
+    { title: 'THE BEST CHOICE IS HERE', subtitle: 'New Arrivals On Sale', image: 'assets/images/carousel/s1.jpg' },
+    { title: 'Biggest discount', subtitle: 'Check the promotion', image: 'assets/images/carousel/s2.jpg' },
+    { title: 'Biggest sale', subtitle: 'Dont miss it', image: 'assets/images/carousel/s3.jpg' },
+    { title: 'Biggest sale', subtitle: 'Dont miss it', image: 'assets/images/carousel/s4.jpg' },
 
   ];
 

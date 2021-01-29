@@ -1,14 +1,14 @@
 <div class="product-item"  >
   <mat-card fxLayout="column">
     <div class="product-img">
-        <a class="product-link" [routerLink]="['/home/product', product.id]">
-          <img [src]="product.pictures[0].big" alt="">
+        <a class="product-link" [routerLink]="['/home/product', product.uid]">
+          <img [src]="'http://51.89.97.33:5500/'+product.images[0]" alt="">
        </a>
     </div>
      <div class="product-info-wrapper">
         <span class="category">{{product.category}}</span>
         <div class="title-wrap">
-           <h4>{{product.name}}</h4>
+           <h4>{{product.nom}}</h4>
         </div>
         <div class="price-wrap" fxLayout="row" fxLayoutAlign="space-between center">
             <div class="stars">
@@ -18,7 +18,7 @@
                 <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
                 <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
              </div>
-         <p>${{product.price | number : '1.2-2'}}</p>
+         <p>{{product.prix}} CFA</p>
         </div>
         <div class="btn-wrap" fxLayout="row" fxLayoutAlign="space-between center">
             <a (click)="addToCart(product)">ADD TO CART <mat-icon class="mat-icon-lg mat-icon material-icons">shopping_cart</mat-icon></a>

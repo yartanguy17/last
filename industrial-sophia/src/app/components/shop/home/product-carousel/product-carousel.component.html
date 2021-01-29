@@ -4,7 +4,7 @@
                 <mat-card fxLayout="column">
                     <div class="product-img">
                         <a class="product-link" [routerLink]="['/home/product', product.uid]">
-                          <img [src]="product.images[0]+'.PNG'" alt="" style="height: 100px;width: 100px;">
+                          <img [src]="'http://51.89.97.33:5500'+product.images[0]" alt="" style="height: 100px;width: 150px;">
                        </a>
                     </div>
                      <div class="product-info-wrapper">

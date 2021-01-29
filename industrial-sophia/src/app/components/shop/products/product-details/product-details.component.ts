@@ -35,10 +35,8 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT) private document: Document, private route: ActivatedRoute, public productsService: ProductService, public dialog: MatDialog, private router: Router, private cartService: CartService) {
     this.route.params.subscribe(params => {
-      const id = +params['id'];
-      this.productsService.getProduct(id).subscribe(product => {
-        this.product = product
-      });
+      const id = params['id'];
+      this.product= this.productsService.getProduct(id)
       window.scrollTo(0, 0)
     });
 
@@ -131,10 +129,10 @@ export class ProductDetailsComponent implements OnInit {
 
   }
 
-  public openProductDialog(product, bigProductImageIndex) {
+  public openProductDialog(product) {
     let dialogRef = this.dialog.open(ProductZoomComponent,
       {
-      data: {product, index: bigProductImageIndex},
+      data: {product},
 
       panelClass: 'product-dialog',
     });

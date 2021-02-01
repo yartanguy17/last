@@ -40,6 +40,9 @@ export class ProductService {
 
    this.getProduct("d612755e-0573-401c-a2f2-8a82a9a42191")
 
+ this.getProductIdCat("d612755e-0573-401c-a2f2-8a82a9a42191")
+
+
   // this.getProducts()
   }
 
@@ -56,12 +59,21 @@ export class ProductService {
      return this.tabP
   }
 
+  public categories(){
+    const headers = new HttpHeaders({'content-type': 'application/json'})
+    return this.httpClient.get("http://51.89.97.33:5500/api/categories", {headers});
+  }
+
+  // Get Category
+  public getCategories() {
+    return this.categorie();
+  }
   public categorie(){
 
     this.httpClient.get<Category[]>("http://51.89.97.33:5500/api/categories").subscribe(donne=>{
       donne.forEach(res=>{
         console.log("test c:",res)
-        this.tabC.push(res)
+       return this.tabC.push(res)
      })
    })
 
@@ -84,6 +96,11 @@ export class ProductService {
       return this.tabP
     }
 
+    // Get Banners
+    public getCategorys(){
+      return this.tabC
+    }
+
 
       // Get Products By Id
   public getProduct(id: string) {
@@ -103,7 +120,16 @@ export class ProductService {
     // return this.httpClient.get<Product>(this._url + 'product-' + id + '.json');
   }
 
+   // Get Products By Idcat
+   public getProductIdCat(id: string) {
 
+    const f = this.products().find(item=>item.category === id)
+
+     console.log("categ:",f)
+     return f
+
+
+   }
         /*
       ---------------------------------------------
       ----------  Compare Product  ----------------
@@ -158,7 +184,19 @@ public removeFromCompare(product: Product) {
    public getProductByCategory(category: string) {
 
     this.tabP.filter(item=>{
-      if(category == 'all')
+      if(category == '06638415-afdd-41ce-aaa4-d93ba984a9e6')
+          return item
+          else
+          return item.category === category
+    })
+
+  }
+
+  // Get Products By category
+  public getProductByIdCategory(category: string) {
+
+    this.products().filter(item=>{
+      if(category ==="06638415-afdd-41ce-aaa4-d93ba984a9e6")
           return item
           else
           return item.category === category

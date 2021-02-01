@@ -17,7 +17,7 @@
                        <button mat-icon-button  fxHide="false" fxHide.gt-md>
                           <mat-icon>fullscreen</mat-icon>
                        </button>
-                       <img [src]="product.images[0]" alt="">
+                       <img [src]="'http://51.89.97.33:5500/'+product.images[0]" alt="">
                     </div>
                     <a (click)="openProductDialog(product)"><mat-icon>zoom_in</mat-icon></a>
                  </mat-card>
@@ -26,7 +26,7 @@
                 <div class="small-carousel">
                     <div class="swiper-container" [swiper]="config">
                         <div class="swiper-wrapper">
-                          <img [src]="product.images[0]" alt="">
+                          <img [src]="'http://51.89.97.33:5500/'+product.images[0]" alt="">
                         </div>
                         <button mat-icon-button class="swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
                         <button mat-icon-button class="swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button>
@@ -42,13 +42,13 @@
                         <h3 class="price" *ngIf="!productsService?.catalogMode">{{product.prix }}</h3>
                         <p class="text-muted description">{{product.description}}</p>
                      </div>
-                     <div class="py-1 mt-15 mb-15">
+                    <!---- <div class="py-1 mt-15 mb-15">
                         <p>
                            <span class="text-muted fw-500">Avalibility: </span>
                            <span class="avalibility" *ngIf="counter <= product.stock"><span>In Stock</span></span>
                            <span class="avalibility red" *ngIf="counter > product.stock"><span>Out of Stock</span></span>
                         </p>
-                     </div>
+                     </div>-->
                      <div class="quantity mb-15">
                         <div fxLayout="row" fxLayout.xs="column"  class="text-muted mt-20">
                            <div class="quantity-box" fxLayout="row" fxLayoutAlign="center start">
@@ -79,7 +79,7 @@
                </div>
           </div>
 
-          <div class="review-wrapper" fxFlex="100"  fxFlex.md="75">
+          <!--<div class="review-wrapper" fxFlex="100"  fxFlex.md="75">
 
                <mat-tab-group [@.disabled]="true" [selectedIndex]="0">
                <mat-tab label="Description">
@@ -186,7 +186,7 @@
                </mat-tab>
                </mat-tab-group>
 
-         </div>
+         </div>-->
 
 
 

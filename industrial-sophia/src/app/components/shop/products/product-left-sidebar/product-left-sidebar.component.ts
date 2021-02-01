@@ -18,6 +18,7 @@ export class ProductLeftSidebarComponent implements OnInit {
   public viewCol: number = 25;
   public colorFilters :   ColorFilter[] = [];
 
+  public item: any;
   public items        :   Product[] = [];
   public allItems: Product[] = [];
   public products: Product[] = [];
@@ -28,12 +29,11 @@ export class ProductLeftSidebarComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         const category = params['category'];
-        this.productService.getProductByCategory(category).subscribe(products => {
-       this.allItems = products;
-       this.products = products.slice(0.8);
-       this.getTags(products)
-       this.getColors(products)
-        })
+        this.item = this.productService.getProductByIdCategory(category)
+        this.allItems.push(this.item)
+        this.products = this.item.slice(0.8);
+       this.getTags(this.item)
+       this.getColors(this.item)
       }
     )
   }

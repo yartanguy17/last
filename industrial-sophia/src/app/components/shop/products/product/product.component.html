@@ -2,11 +2,11 @@
   <mat-card fxLayout="column">
     <div class="product-img">
         <a class="product-link" [routerLink]="['/home/product', product.uid]">
-          <img [src]="'http://51.89.97.33:5500/'+product.images[0]" alt="">
+          <img [src]="'http://51.89.97.33:5500'+product.images[0]" alt="" style="height: 100px;width: 150px;">
        </a>
     </div>
      <div class="product-info-wrapper">
-        <span class="category">{{product.category}}</span>
+        
         <div class="title-wrap">
            <h4>{{product.nom}}</h4>
         </div>

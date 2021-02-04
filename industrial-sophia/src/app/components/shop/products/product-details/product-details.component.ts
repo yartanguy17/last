@@ -23,7 +23,7 @@ export class ProductDetailsComponent implements OnInit {
   @ViewChild(SwiperDirective, { static: true }) directiveRef: SwiperDirective;
 
   public product: Product;
-  public products: Product[] = [];
+  public products: any[] = [];
   public images: Product;
   public image: any;
   public zoomImage: any;
@@ -56,7 +56,7 @@ export class ProductDetailsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.products=this.productsService.getProducts();
+    this.productsService.getProducts().forEach(product => this.products.push(product));
 
     this.document.body.scrollTop = 0;
 

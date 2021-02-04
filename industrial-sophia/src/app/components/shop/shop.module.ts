@@ -26,6 +26,7 @@ import { BrandsComponent } from './widgets/brands/brands.component';
 import { CategoriesComponent } from './widgets/categories/categories.component';
 import { PopularProductsComponent } from './widgets/popular-products/popular-products.component';
 import { ProductZoomComponent } from './products/product-details/product-zoom/product-zoom.component';
+import { ProductAllComponent } from './products/product-all/product-all.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ProductZoomComponent } from './products/product-details/product-zoom/pr
     BrandsComponent,
     CategoriesComponent,
     PopularProductsComponent,
-    ProductZoomComponent
+    ProductZoomComponent,
+    ProductAllComponent
   ],
   imports: [
     CommonModule,

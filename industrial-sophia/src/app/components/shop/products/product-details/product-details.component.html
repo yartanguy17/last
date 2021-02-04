@@ -17,28 +17,20 @@
                        <button mat-icon-button  fxHide="false" fxHide.gt-md>
                           <mat-icon>fullscreen</mat-icon>
                        </button>
-                       <img [src]="'http://51.89.97.33:5500/'+product.images[0]" alt="">
+                       <img [src]="'http://51.89.97.33:5500'+product.images[0]" alt="" style="height: 500px;width: 550px;">
                     </div>
-                    <a (click)="openProductDialog(product)"><mat-icon>zoom_in</mat-icon></a>
+                  <!---- <a (click)="openProductDialog(product, bigProductImageIndex)"><mat-icon>zoom_in</mat-icon></a>-->
                  </mat-card>
 
 
-                <div class="small-carousel">
-                    <div class="swiper-container" [swiper]="config">
-                        <div class="swiper-wrapper">
-                          <img [src]="'http://51.89.97.33:5500/'+product.images[0]" alt="">
-                        </div>
-                        <button mat-icon-button class="swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
-                        <button mat-icon-button class="swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button>
-                    </div>
-                </div>
+
                </div>
                <div fxFlex="100" fxFlex.gt-md="50" fxFlex.md="55" ngClass.gt-sm="px-3 m-0" ngClass.sm="mt-2" ngClass.xs="mt-2">
 
                   <div class="product-right">
                      <div class="product-details">
                         <h2>{{product.nom}}</h2>
-                        <h4 *ngIf="!productsService?.catalogMode"><del>{{product.salePrice }}</del><span>{{product.discount}}% off</span></h4>
+                        <h4 *ngIf="!productsService?.catalogMode"><del>{{product.salePrice }}</del><span>{{product.discount}}</span></h4>
                         <h3 class="price" *ngIf="!productsService?.catalogMode">{{product.prix }}</h3>
                         <p class="text-muted description">{{product.description}}</p>
                      </div>
@@ -254,7 +246,7 @@
     <div class="products no-bg sec-padding">
         <div class="title">
             <h4 class="widget-title">
-              Produits de la même catégorie</h4>
+              Produits</h4>
           </div>
           <app-product-carousel [product]="products | slice:0:30"></app-product-carousel>
      </div>

@@ -4,19 +4,19 @@
         <div class="container">
             <mat-tab-group>
 
-                <mat-tab  label="PRODUITS POPULAIRES">
+                <mat-tab  label="Meilleur vente">
 
                          <app-product-carousel [product]="products | slice:0:9"></app-product-carousel>
 
                 </mat-tab>
 
-                <mat-tab label="DERNIERS PRODUITS">
+                <mat-tab label="Promotion">
 
                         <app-product-carousel [product]="products | slice:10:19"></app-product-carousel>
 
                 </mat-tab>
 
-                <mat-tab label="PRODUITS EN VENTE">
+                <mat-tab label="Bon plan">
 
                           <app-product-carousel [product]="products | slice:20:29"></app-product-carousel>
 
@@ -26,7 +26,8 @@
         </div>
 
       </div>
-     <!---- <div class="categories sec-padding">
+      <app-product-all></app-product-all>
+      <div class="categories sec-padding">
           <div class="container">
             <div class="title">
                 <h3>BROWSE</h3>
@@ -34,8 +35,8 @@
 
             <app-banners></app-banners>
           </div>
-          </div>
-      <app-info-bar></app-info-bar>
+       </div>
+  <!----    <app-info-bar></app-info-bar>
       <app-blog-section></app-blog-section>-->
 
 </div>

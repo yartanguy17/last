@@ -21,20 +21,20 @@ export class CategoriesComponent implements OnInit {
   }
 
   getAllcategorie(){
-   this.categorieService.getCategories().forEach((res)=>{
+    this.categorieService.getCategorie().subscribe((res:Category)=>{
 
-       this.tableau=res;
+      this.tableau=res;
 
-       for (let _i = 0; _i <= this.tableau.length; _i++){
+      for (let _i = 0; _i <= this.tableau.length; _i++){
 
-       this.categorie.push(this.tableau[_i]);
+      this.categorie.push(this.tableau[_i]);
 
-        console.log('resultat du for :', this.categorie);
-        ;
-       }
-        return this.categorie
+       console.log('resultat du for :', this.categorie);
+       ;
+      }
+       return this.categorie
 
-    })
+   })
   }
 
 }

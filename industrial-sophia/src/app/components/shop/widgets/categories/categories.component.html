@@ -1,13 +1,5 @@
 <div class="category-contant">
-    <ul *ngFor="let category of category">
-        <li><a class="no-brd" [routerLink]="['/home/products/',category.uid]">{{category.nom}}</a></li>
-       <!---- <li><a [routerLink]="['/home/products/Exit Lights']">Exit Lights</a></li>
-        <li><a [routerLink]="['/home/products/Emergency Lights']">Emergency Lights</a></li>
-        <li><a [routerLink]="['/home/products/LED Drivers']">Led Drivers</a></li>
-        <li><a [routerLink]="['/home/products/Valves & Actuators']">Valves & Actuators</a></li>
-        <li><a [routerLink]="['/home/products/Damper Actuators']">Damper Actuators</a></li>
-        <li><a [routerLink]="['/home/products/Sensors']">Sensors</a></li>
-        <li><a [routerLink]="['/home/products/Thermostats']">Thermostats</a></li>
-        <li><a [routerLink]="['/home/products/Central Monitoring Systems']">Central Monitoring Systems</a></li>-->
-    </ul>
+  <ul *ngFor="let categorie of categorie">
+    <li><a class="no-brd" [routerLink]="['/home/products/',categorie.uid]" style="color:green; font-size: 20px;">{{categorie.nom}}</a></li>
+</ul>
 </div>

@@ -15,7 +15,7 @@ export class CategoriesMenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.category=this.productService.getCategories()
+    // this.category=this.productService.getCategorie()
   }
 
 }

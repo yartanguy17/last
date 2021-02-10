@@ -33,14 +33,10 @@ export class ProductService {
 
    this.products()
    this.categorie()
-   console.log("test produit:",this.products())
+   this.getProductByCategory("efd2408f-55e9-4ae7-82d2-c9b00758e8bb");
 
-   console.log("test tab:",this.tabP)
-   console.log("test tabC:",this.tabC)
 
-   this.getProduct("d612755e-0573-401c-a2f2-8a82a9a42191")
 
- this.getProductIdCat("d612755e-0573-401c-a2f2-8a82a9a42191")
 
 
   // this.getProducts()
@@ -59,26 +55,12 @@ export class ProductService {
      return this.tabP
   }
 
-  public categories(){
-    const headers = new HttpHeaders({'content-type': 'application/json'})
-    return this.httpClient.get("http://51.89.97.33:5500/api/categories", {headers});
-  }
 
   // Get Category
-  public getCategories() {
-    return this.categorie();
-  }
+
   public categorie(){
-
-    this.httpClient.get<Category[]>("http://51.89.97.33:5500/api/categories").subscribe(donne=>{
-      donne.forEach(res=>{
-        console.log("test c:",res)
-       return this.tabC.push(res)
-     })
-   })
-
-   console.log("test tabc in func:",this.tabC)
-   return this.tabC
+    const headers = new HttpHeaders({'content-type': 'application/json'})
+    return this.httpClient.get("http://51.89.97.33:5500/api/categories", {headers});
   }
 
   public banners(): Observable<any[]>{
@@ -97,8 +79,8 @@ export class ProductService {
     }
 
     // Get Banners
-    public getCategorys(){
-      return this.tabC
+    public getCategorie() {
+      return this.categorie();
     }
 
 
@@ -183,11 +165,15 @@ public removeFromCompare(product: Product) {
    // Get Products By category
    public getProductByCategory(category: string) {
 
-    this.tabP.filter(item=>{
-      if(category == '06638415-afdd-41ce-aaa4-d93ba984a9e6')
-          return item
-          else
-          return item.category === category
+    console.log('test cate:',this.tabP)
+    this.tabP.forEach(donne=>{
+      if(donne.category === category){
+        console.log('dans if:',donne)
+        return donne
+      }else{
+        console.log('Rien trouvé')
+        return this.tabP
+      }
     })
 
   }

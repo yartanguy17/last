@@ -29,9 +29,9 @@ export class ProductLeftSidebarComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         const category = params['category'];
-        this.item = this.productService.getProductByIdCategory(category)
+        this.item = this.productService.getProductByCategory(category)
         this.allItems.push(this.item)
-        this.products = this.item.slice(0.8);
+        this.products = this.item.slice(0.10);
        this.getTags(this.item)
        this.getColors(this.item)
       }

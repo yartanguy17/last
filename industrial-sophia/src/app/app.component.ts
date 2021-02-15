@@ -45,17 +45,17 @@ export class AppComponent implements OnInit {
 
   navItems: SidenavMenu[] = [
     {
-      displayName: 'Home',
+      displayName: 'Accueil',
       iconName: 'recent_actors',
       route: '/home'
     },
     {
-      displayName: 'Products',
+      displayName: 'Produits',
           iconName: 'feedback',
           route: '/home/products/all'
     },
     {
-      displayName: 'Shop',
+      displayName: 'Boutique',
       iconName: 'movie_filter',
       children: [
         {
